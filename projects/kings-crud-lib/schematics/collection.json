@@ -1,0 +1,14 @@
+{
+    "$schema": "../../../node_modules/@angular-devkit/schematics/collection-schema.json",
+    "schematics": {
+        "ng-add": {
+            "description": "Add my library to the project.",
+            "factory": "./ng-add/index#ngAdd"
+        },
+        "alert-service": {
+            "description": "Generate an Alert service in the project.",
+            "factory": "./alert-service/index#AlertService",
+            "schema": "./alert-service/schema.json"
+        }
+    }
+}

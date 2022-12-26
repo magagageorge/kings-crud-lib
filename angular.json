@@ -3,5 +3,49 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
+    "kings-crud-lib": {
+      "projectType": "library",
+      "root": "projects/kings-crud-lib",
+      "sourceRoot": "projects/kings-crud-lib/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/kings-crud-lib/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/kings-crud-lib/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/kings-crud-lib/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/kings-crud-lib/src/test.ts",
+            "tsConfig": "projects/kings-crud-lib/tsconfig.spec.json",
+            "karmaConfig": "projects/kings-crud-lib/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "projects/kings-crud-lib/**/*.ts",
+              "projects/kings-crud-lib/**/*.html"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "kings-crud-lib",
+  "cli": {
+    "defaultCollection": "@angular-eslint/schematics"
   }
 }
